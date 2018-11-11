@@ -1,13 +1,15 @@
 {
   "entrypoint": "index.html",
-  "shell": "src/start-polymer3.js",
+  "shell": "src/recipe-app.js",
   "fragments": [
-    "src/lazy-element.js"
+    "src/recipe-list.js",
+    "src/recipe-detail.js"
   ],
   "sources": [
-   "src/start-polymer3.js",
-   "manifest/**",
-   "package.json"
+    "src/**",
+    "data/**",
+    "manifest/**",
+    "package.json"
   ],
   "extraDependencies": [
     "manifest.json",
