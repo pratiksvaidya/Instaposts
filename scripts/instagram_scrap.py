@@ -13,7 +13,7 @@ chrome_options.add_argument('headless')
 
 hashtag = sys.argv[1]
 
-### Save records to file
+### Get records from firebase db
 
 col_ref = db.collection(u'insta-posts')
 entries = col_ref.get()
@@ -22,9 +22,9 @@ records = dict()
 for entry in entries:
     records[entry.id]=entry.to_dict()
 
-records_f = open("records.pkl","wb")
-pickle.dump(records,records_f)
-records_f.close()
+# records_f = open("records.pkl","wb")
+# pickle.dump(records,records_f)
+# records_f.close()
 
 ## Check for new posts with #VenturingBSA
 print('#' + hashtag)
@@ -67,9 +67,9 @@ driver.close()
 
 posts = list(posts)
 
-posts_f = open("posts_" + hashtag + ".pkl","wb")
-pickle.dump(posts,posts_f)
-posts_f.close()
+# posts_f = open("posts_" + hashtag + ".pkl","wb")
+# pickle.dump(posts,posts_f)
+# posts_f.close()
 
 ### Get post information from each link
 
@@ -99,9 +99,9 @@ for post in posts:
         pass
     driver.close()
 
-results_f = open("results.pkl","wb")
-pickle.dump(results,results_f)
-results_f.close()
+# results_f = open("results.pkl","wb")
+# pickle.dump(results,results_f)
+# results_f.close()
 
 ### Save results to Firebase Database
 from google.cloud import firestore
