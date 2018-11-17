@@ -27,7 +27,7 @@
 <body>
   <dom-bind>
     <template is="dom-bind">
-      <iron-ajax url="https://firestore.googleapis.com/v1beta1/projects/venturing-social-media/databases/(default)/documents/insta-posts?orderBy=posted_dt+desc&key=AIzaSyBl51YZMDNd2Vn24pXGEZP-q5Fa7XcogtQ" params='{"pageSize":50}' auto last-response="{{posts}}"></iron-ajax>
+      <iron-ajax url="https://firestore.googleapis.com/v1beta1/projects/venturing-social-media/databases/(default)/documents/insta-posts?orderBy=posted_dt+desc" params='{"pageSize":50}' auto last-response="{{posts}}"></iron-ajax>
       <!-- <iron-ajax url="data/posts.json" auto last-response="{{posts}}"></iron-ajax> -->
       <recipe-app recipes="[[posts.documents]]">
         <!-- 
